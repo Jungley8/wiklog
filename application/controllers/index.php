@@ -32,20 +32,27 @@ class Index extends CI_Controller {
 		$this->load->view('frontend/index', $this->data);
 	}
 
-	public function article($id) {
+	public function article($id = '') {
 		// 获取单篇文章信息
 		$this->data['article'] = $this->article_model->get_article($id);
 
 		$this->load->view('frontend/article', $this->data);
 	}
 
-	public function category($id) {
+	public function category($id = '') {
 		// 获取指定栏目文章列表
 		$this->data['articles'] = $this->article_model->get_articles($id);
 		$this->load->view('frontend/category', $this->data);
 	}
 
-	public function search($tags) {
-		# code...
+	public function search($keyword = '') {
+		if (empty($keyword)) {
+			echo "关键词不能为空";
+			return false;
+		}
+		// 获取指定栏目文章列表
+		$this->data['keyword'] = $keyword;
+		$this->data['results'] = $this->article_model->search_articles($keyword);
+		$this->load->view('frontend/search', $this->data);
 	}
 }

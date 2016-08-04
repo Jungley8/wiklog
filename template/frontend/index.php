@@ -33,7 +33,7 @@
             <footer class="post-footer clearfix">
               <div class="pull-left">
                 <span class="glyphicon glyphicon-tags"></span>
-                <span class="post-tags"><?=$value['tags']?></span>
+                <span class="post-tags"><?=tagstohtml($value['tags'])?></span>
               </div>
               <div class="post-permalink pull-right">
                 <a href="<?=site_url('index/article/' . $value['id'])?>" class="btn btn-primary">阅读全文</a>

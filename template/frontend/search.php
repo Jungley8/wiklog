@@ -13,7 +13,8 @@
     <div class="row">
 
       <main class="col-xs-9 col-sm-9 col-md-9 col-lg-9 main-content">
-        <?php foreach ($articles as $value): ?>
+      <?php if ($results): ?>
+        <?php foreach ($results as $value): ?>
           <article class="post">
             <header class="post-head page-header">
               <h1 class="post-title">
@@ -41,6 +42,9 @@
             </footer>
           </article>
         <?php endforeach?>
+      <?php else: ?>
+        没有 “<?=$keyword?>”相关文章
+      <?php endif?>
       </main>
 
       <aside class="col-xs-3 col-sm-3 col-md-3 col-lg-3 sidebar">

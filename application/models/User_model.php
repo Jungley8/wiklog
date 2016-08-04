@@ -14,6 +14,10 @@ class User_model extends WL_Model {
 		$this->tbname = $this->db->dbprefix('users');
 	}
 
+	/**
+	 * 检查登录状态
+	 * @return boolean true 登录，false 未登录
+	 */
 	public function check_signin() {
 		$email = $this->input->post('email', TRUE);
 		$passwd = $this->input->post('passwd', TRUE);
@@ -42,6 +46,11 @@ class User_model extends WL_Model {
 		}
 	}
 
+	/**
+	 * 根据ID获取用户信息
+	 * @param  int $id 用户ID
+	 * @return array
+	 */
 	public function get_user($id) {
 		return $this->db->where('id', $id)
 			->limit(1)
@@ -49,6 +58,10 @@ class User_model extends WL_Model {
 			->row_array();
 	}
 
+	/**
+	 * 获取所有用户信息
+	 * @return array
+	 */
 	public function get_users() {
 		$users = array();
 		$query = $this->db->get($this->tbname);
@@ -58,6 +71,11 @@ class User_model extends WL_Model {
 		return $users;
 	}
 
+	/**
+	 * 更新用户信息
+	 * @param  int $id 用户ID
+	 * @return boolean     是否修改成功
+	 */
 	public function update_user($id) {
 		$this->load->library('passwordhash', array(8, TRUE));
 		$this->db->trans_start();

@@ -1,19 +1,25 @@
 <?php
 /**
- *  鏂囩珷妯″瀷
+ *  文章模型
  * @authors Jungley (yejing@live.cn)
  * Copyright (c) 2016 http://www.jungley.net All rights reserved.
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class article_model extends CI_model {
+class Article_model extends WL_Model {
 
-	private $tbname = 'articles';
+	private $tbname;
 
 	function __construct() {
 		parent::__construct();
+		$this->tbname = $this->db->dbprefix('users');
 	}
 
+	/**
+	 * 根据栏目ID获取文章列表
+	 * @param  integer $id 栏目ID
+	 * @return array
+	 */
 	public function get_articles($id = 0) {
 		$this->db->select("id,title,parent_id,user_id,publish_at,description,tags");
 		if ($id) {
@@ -29,10 +35,28 @@ class article_model extends CI_model {
 		return $articles;
 	}
 
+	/**
+	 * 根据ID获取文章信息
+	 * @param  int $id 文章ID
+	 * @return array
+	 */
 	public function get_article($id) {
 		return $this->db->where('id', $id)
 			->limit(1)
 			->get($this->tbname)
 			->row_array();
+	}
+
+	/**
+	 * 根据关键词获取相关文章
+	 * @param  string $keyword 关键词
+	 * @return array
+	 */
+	public function search_articles($keyword) {
+		return $this->db
+			->select("id,title,parent_id,user_id,publish_at,description,tags")
+			->like('title', $keyword)
+			->or_like('description', $keyword)
+			->get($this->tbname)->result_array();
 	}
 }
