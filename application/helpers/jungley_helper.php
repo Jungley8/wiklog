@@ -40,7 +40,7 @@ function tagstohtml($str, $separator = '、') {
 	if (!empty($str)) {
 		$tags = explode($separator, $str);
 		foreach ($tags as $value) {
-			$html .= anchor('index/search/' . $value, $value, 'title="查看 $value 相关文章"');
+			$html .= anchor('search/' . $value, $value, 'title="查看 $value 相关文章"');
 		}
 	}
 	return $html;

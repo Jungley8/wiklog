@@ -12,7 +12,7 @@ class Article_model extends WL_Model {
 
 	function __construct() {
 		parent::__construct();
-		$this->tbname = $this->db->dbprefix('users');
+		$this->tbname = $this->db->dbprefix('articles');
 	}
 
 	/**

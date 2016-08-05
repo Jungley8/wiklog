@@ -16,7 +16,7 @@
         <!-- <?php var_dump($article)?> -->
         <div class="blog-post">
           <h1 class="blog-post-title"><?=$article['title']?></h1>
-          <p class="blog-post-meta">时间：<?=date("Y年m月d日", $article['publish_at'])?> by <?=$users[$article['user_id']]['name']?> at <a href="<?=site_url('index/category/' . $article['id'])?>" class="post-category"><?=$categories[$article['parent_id']]['title']?></a></p>
+          <p class="blog-post-meta">时间：<?=date("Y年m月d日", $article['publish_at'])?> by <?=$users[$article['user_id']]['name']?> at <a href="<?=site_url('category/' . $article['id'])?>" class="post-category"><?=$categories[$article['parent_id']]['title']?></a></p>
 
           <?=$article['content']?>
         </div><!-- /.blog-post -->

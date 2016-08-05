@@ -17,11 +17,11 @@
           <article class="post">
             <header class="post-head page-header">
               <h1 class="post-title">
-                <a href="<?=site_url('index/article/' . $value['id'])?>"><?=$value['title']?></a>
+                <a href="<?=site_url('article/' . $value['id'])?>"><?=$value['title']?></a>
               </h1>
               <div class="post-meta">
                 <span class="glyphicon glyphicon-th-list"></span>
-                栏目：<a href="<?=site_url('index/category/' . $value['id'])?>" class="post-category"><?=$categories[$value['parent_id']]['title']?></a>
+                栏目：<a href="<?=site_url('category/' . $value['parent_id'])?>" class="post-category"><?=$categories[$value['parent_id']]['title']?></a>
                 <span class="glyphicon glyphicon-time"></span>
                 <?=$users[$value['user_id']]['name']?>
                 <time class="post-date" title="" datetime="">时间：<?=date("Y年m月d日", $value['publish_at'])?> </time>
@@ -36,7 +36,7 @@
                 <span class="post-tags"><?=tagstohtml($value['tags'])?></span>
               </div>
               <div class="post-permalink pull-right">
-                <a href="<?=site_url('index/article/' . $value['id'])?>" class="btn btn-primary">阅读全文</a>
+                <a href="<?=site_url('article/' . $value['id'])?>" class="btn btn-primary">阅读全文</a>
               </div>
             </footer>
           </article>
