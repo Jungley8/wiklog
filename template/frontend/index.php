@@ -95,7 +95,7 @@
       </aside>
     </div>
 
-<?php $this->load->view('frontend/include/footer');?>
+    <?php $this->load->view('frontend/include/footer');?>
   </div>
 
 

@@ -36,7 +36,7 @@ class Index extends WL_Controller {
 		$data['agent'] = $agent;
 		$data['platform'] = $this->agent->platform();
 
-		$this->_view('admin/blank', $data);
+		$this->_view('admin/index', $data);
 
 	}
 }

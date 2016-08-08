@@ -1,86 +1,58 @@
-<div id="navbar" class="navbar navbar-default ace-save-state">
-  <div class="navbar-container ace-save-state" id="navbar-container">
-    <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-      <span class="sr-only">Toggle sidebar</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <div class="navbar-header pull-left">
-      <a href="index.html" class="navbar-brand">
-        <small>
-          <i class="fa fa-paper-plane"></i>
-          Jungley
-        </small>
-      </a>
+<div class="navbar navbar-default navbar-fixed-top header">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Jungley</a>
     </div>
-    <div class="navbar-buttons navbar-header pull-right" role="navigation">
-      <ul class="nav ace-nav">
-        <li class="purple dropdown-modal">
-          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-            <span class="badge badge-important">1</span>
-          </a>
-          <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-            <li class="dropdown-header">
-              <i class="ace-icon fa fa-exclamation-triangle"></i>
-              1 条消息
-            </li>
-            <li class="dropdown-content">
-              <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">
-                        <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-                        新评论
-                      </span>
-                      <span class="pull-right badge badge-info">+12</span>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--       <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
-        <li class="light-blue dropdown-modal">
-          <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-            <img class="nav-user-photo" src="/template/assets/images/avatars/user.jpg" alt="Jason's Photo" />
-            <span class="user-info">
-              <small>Welcome,</small>
-              Jason
-            </span>
-            <i class="ace-icon fa fa-caret-down"></i>
-          </a>
-          <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-            <li>
-              <a href="#">
-                <i class="ace-icon fa fa-cog"></i>
-                设置
-              </a>
-            </li>
-            <li>
-              <a href="profile.html">
-                <i class="ace-icon fa fa-user"></i>
-                用户信息
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="ace-icon fa fa-cog"></i>
-                修改密码
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="<?=site_url('sso/signout')?>">
-                <i class="ace-icon fa fa-power-off"></i>
-                登出
-              </a>
-            </li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<?php echo site_url('sso/signout') ?>">消息 <span class="badge">42</span></a></li>
+        <li><a href="<?php echo site_url('sso/signout') ?>">
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        退出</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            个人中心 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
           </ul>
         </li>
       </ul>
-    </div>
-  </div><!-- /.navbar-container -->
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </div>
